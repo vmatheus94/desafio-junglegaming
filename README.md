@@ -112,7 +112,7 @@ Use `ana@kurio.dev` / `Kurio@2026`.
 ## 7. Testes
 
 - **E2E** (`tests/e2e`): os 12 grupos do enunciado, em Chromium desktop (1440×900) e mobile (390×844). Testes marcados com `@desktop` rodam só no desktop.
-- **Regressão visual** (`tests/visual`): início, detalhe, carrinho e pagamento, nos dois viewports. Baselines em `tests/visual/__screenshots__/<projeto>/<nome>-<plataforma>.png`. A fonte renderiza diferente entre sistemas operacionais, por isso há uma baseline por plataforma (`-linux`, `-win32`). Na primeira execução em uma plataforma nova, rode `pnpm test:e2e:update`.
+- **Regressão visual** (`tests/visual`): início, detalhe, carrinho e pagamento, nos dois viewports. Baselines em `tests/visual/__screenshots__/<projeto>/<nome>-<plataforma>.png`. A fonte renderiza diferente entre sistemas operacionais, por isso há uma baseline por plataforma (`-linux`, `-win32`). Na primeira execução em uma plataforma nova, rode `pnpm test:e2e:update`. As baselines versionadas são de Windows (`-win32`); por isso o CI (Ubuntu) roda só a suíte E2E (`tests/e2e`), e a regressão visual roda localmente com `pnpm test:e2e`.
 - Cada teste usa um contexto isolado (storage vazio = banco simulado recém-semeado) e o cenário `instant`. Relógio, latência e eventos são controlados por `page.clock` e pela API `window.__kurioMock`. Eventos de tempo real sempre passam pelo `socket.io-client` e o REST pelos handlers MSW.
 - Relatório HTML em `playwright-report/`; traces, vídeos e screenshots das falhas em `test-results/`.
 
