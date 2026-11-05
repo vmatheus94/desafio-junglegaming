@@ -1,0 +1,272 @@
+{
+  "env": {
+    "date": "2026-11-05T05:53:59.548Z",
+    "lighthouse": "12.8.2",
+    "node": "v24.13.0",
+    "os": "Windows_NT 10.0.26200 (x64)",
+    "cpu": "AMD Ryzen 5 5500                               ",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "runsPerPage": 3,
+    "throttling": {
+      "mobile": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.56,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "desktop": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "cpuSlowdownMultiplier": 1,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0
+      }
+    },
+    "mocksScenario": "default"
+  },
+  "results": [
+    {
+      "page": "inicio",
+      "url": "/",
+      "profile": "mobile",
+      "median": {
+        "performance": 78,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "LCP": 4357.7427,
+        "CLS": 0.0004394956905398556,
+        "TBT": 87.01724999999988
+      },
+      "runs": [
+        {
+          "scores": {
+            "performance": 77,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 4359.103499999999,
+            "CLS": 0.0004394956905398556,
+            "TBT": 87.01724999999988
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        {
+          "scores": {
+            "performance": 78,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 4357.7427,
+            "CLS": 0.0004394956905398556,
+            "TBT": 86.79044999999996
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        {
+          "scores": {
+            "performance": 78,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 4357.05675,
+            "CLS": 0.0004394956905398556,
+            "TBT": 87.67612500000087
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        }
+      ]
+    },
+    {
+      "page": "inicio",
+      "url": "/",
+      "profile": "desktop",
+      "median": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "LCP": 873.4373999999998,
+        "CLS": 0.001405355025155324,
+        "TBT": 0
+      },
+      "runs": [
+        {
+          "scores": {
+            "performance": 99,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 873.4373999999998,
+            "CLS": 0.001405355025155324,
+            "TBT": 0
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        {
+          "scores": {
+            "performance": 99,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 875.0594000000001,
+            "CLS": 0.001405355025155324,
+            "TBT": 0
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        {
+          "scores": {
+            "performance": 99,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 872.6399999999999,
+            "CLS": 0.001405355025155324,
+            "TBT": 0
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        }
+      ]
+    },
+    {
+      "page": "detalhe-nft",
+      "url": "/nft/emerald-ape-042",
+      "profile": "mobile",
+      "median": {
+        "performance": 81,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "LCP": 3797.1766,
+        "CLS": 0,
+        "TBT": 79.08457500000031
+      },
+      "runs": [
+        {
+          "scores": {
+            "performance": 81,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 3796.3294000000005,
+            "CLS": 0,
+            "TBT": 73.50000000000023
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        {
+          "scores": {
+            "performance": 82,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 3797.1766,
+            "CLS": 0,
+            "TBT": 79.08457500000031
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        {
+          "scores": {
+            "performance": 81,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 3799.7799999999997,
+            "CLS": 0,
+            "TBT": 89.53499999999985
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        }
+      ]
+    },
+    {
+      "page": "detalhe-nft",
+      "url": "/nft/emerald-ape-042",
+      "profile": "desktop",
+      "median": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "LCP": 820.2296000000001,
+        "CLS": 0.00006822917086369746,
+        "TBT": 0
+      },
+      "runs": [
+        {
+          "scores": {
+            "performance": 99,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 820.2296000000001,
+            "CLS": 0.00006822917086369746,
+            "TBT": 0
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        {
+          "scores": {
+            "performance": 99,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 816.4902,
+            "CLS": 0.00006822917086369746,
+            "TBT": 0
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        },
+        {
+          "scores": {
+            "performance": 99,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "LCP": 839.0527999999999,
+            "CLS": 0.00006822917086369746,
+            "TBT": 0
+          },
+          "chromeVersion": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+        }
+      ]
+    }
+  ]
+}

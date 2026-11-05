@@ -1,0 +1,77 @@
+{
+  "name": "kurio-nft-marketplace",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.app.json --noEmit && vite build",
+    "preview": "vite preview --port 4173 --strictPort",
+    "typecheck": "tsc -b --noEmit",
+    "lint": "eslint .",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
+    "test:e2e:report": "playwright show-report",
+    "lighthouse": "node lighthouse/run.mjs",
+    "images": "node scripts/optimize-images.mjs",
+    "format": "prettier --write ."
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
+  "dependencies": {
+    "@fontsource/roboto-mono": "^5.3.0",
+    "@hookform/resolvers": "^5.9.2",
+    "@mswjs/socket.io-binding": "0.2.0",
+    "@tanstack/react-query": "^5.105.0",
+    "@tanstack/react-router": "^1.170.46",
+    "axios": "^1.21.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "decimal.js": "^10.6.0",
+    "lucide-react": "~0.577.0",
+    "msw": "~2.15.0",
+    "radix-ui": "^1.8.1",
+    "react": "~19.2.9",
+    "react-dom": "~19.2.9",
+    "react-hook-form": "^7.91.0",
+    "socket.io-client": "^4.8.4",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@playwright/test": "~1.63.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@tanstack/router-plugin": "^1.168.48",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "chrome-launcher": "^1.2.2",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
+    "lighthouse": "^12.8.2",
+    "prettier": "^3.9.10",
+    "sharp": "~0.34.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^7.3.7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "msw"
+    ]
+  }
+}

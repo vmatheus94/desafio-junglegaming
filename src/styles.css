@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+@import '@fontsource/roboto-mono/latin-400.css';
+@import '@fontsource/roboto-mono/latin-500.css';
+@import '@fontsource/roboto-mono/latin-700.css';
+
+@theme {
+  --font-sans: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-ink: #140d0a;
+  --color-foreground: #f5f1eb;
+  --color-text-primary: #f7f3ec;
+  --color-text-secondary: #cfb28c;
+  --color-text-accent: #e89b55;
+  --color-text-coral: #f0805f;
+  --color-primary: #d28a4c;
+  --color-primary-hover: #e09a5c;
+  --color-secondary: #b39463;
+  --color-surface-card: #241612;
+  --color-surface-raised: #2f1d15;
+  --color-surface-dark: #38220f;
+  --color-border: #3f2319;
+  --color-border-soft: #55321f;
+  --color-input-border: #80583d;
+  --color-success: #6fbf73;
+  --color-danger: #f0805f;
+  --color-background-elevated: #fbfbfb;
+
+  --breakpoint-xs: 390px;
+
+  --animate-shimmer: shimmer 1.4s ease-in-out infinite;
+
+  @keyframes shimmer {
+    0% {
+      background-position: -400px 0;
+    }
+    100% {
+      background-position: 400px 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ink font-sans text-foreground antialiased;
+    min-height: 100dvh;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-text-accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-[1200px] px-4 md:px-6 xl:px-0;
+  }
+  .skeleton {
+    background-color: var(--color-surface-card);
+    background-image: linear-gradient(90deg, transparent 0, rgba(210, 138, 76, 0.12) 50%, transparent 100%);
+    background-size: 400px 100%;
+    background-repeat: no-repeat;
+    animation: var(--animate-shimmer);
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .skeleton {
+    animation: none;
+    background-image: none;
+  }
+}
