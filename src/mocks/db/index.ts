@@ -21,7 +21,7 @@ import { hashPassword, randomId } from './crypto'
 import { bus } from '../realtime/bus'
 
 const DB_KEY = 'kurio:mock-db'
-const DB_VERSION = 4
+const DB_VERSION = 5
 export const QUOTE_TTL_MS = 10 * 60 * 1000
 export const SESSION_TTL_MS = 2 * 60 * 60 * 1000
 
@@ -168,13 +168,24 @@ export function toSummary(n: NftRecord): NftSummary {
   }
 }
 
+function diverseByArt(candidates: NftRecord[], currentArt: NftRecord['art'], count: number) {
+  const picked: NftRecord[] = []
+  const used = new Set<NftRecord['art']>([currentArt])
+  while (picked.length < count && picked.length < candidates.length) {
+    const next = candidates.find((c) => !picked.includes(c) && !used.has(c.art)) ?? candidates.find((c) => !picked.includes(c))!
+    picked.push(next)
+    used.add(next.art)
+    if (used.size === 4) used.clear()
+  }
+  return picked
+}
+
 export function toDetail(n: NftRecord): NftDetail {
   const s = db()
-  const related = Object.values(s.nfts)
-    .filter((o) => o.id !== n.id && o.collection.id === n.collection.id)
-    .slice(0, 5)
-  const fill = Object.values(s.nfts).filter((o) => o.id !== n.id && !related.includes(o))
-  const rel = [...related, ...fill].slice(0, 5)
+  const others = Object.values(s.nfts).filter((o) => o.id !== n.id)
+  const sameCollection = others.filter((o) => o.collection.id === n.collection.id)
+  const fill = others.filter((o) => o.collection.id !== n.collection.id)
+  const rel = diverseByArt([...sameCollection, ...fill], n.art, 5)
   return {
     ...toSummary(n),
     images: n.gallery.map((k, i) => ({

@@ -68,6 +68,7 @@ function editions(basePrice: string, seed: number, opts: { soldOut?: boolean; on
 interface Seed {
   name: string
   art: ArtKey
+  collection?: ArtKey
   price: string
   category: CategoryId
   network: NetworkId
@@ -192,6 +193,8 @@ const NAME_PARTS: Array<[string, ArtKey]> = [
   ['Ecru Consul', 'baron'],
 ]
 
+const COLLECTION_KEYS: ArtKey[] = ['ape', 'nomad', 'baron', 'beat']
+
 const CATEGORY_CYCLE: CategoryId[] = [
   'digital-art',
   'photography',
@@ -215,6 +218,7 @@ function generated(): Seed[] {
     return {
       name: `${name} #${num}`,
       art,
+      collection: COLLECTION_KEYS[Math.floor(i / 4) % COLLECTION_KEYS.length],
       price: i === 4 ? '12.30' : i === 9 ? '0.02' : price,
       category: CATEGORY_CYCLE[i % CATEGORY_CYCLE.length],
       network: NETWORK_CYCLE[i % NETWORK_CYCLE.length],
@@ -252,7 +256,7 @@ export function buildNftFixtures(): NftRecord[] {
       gallery: GALLERY[s.art],
       category: s.category,
       network: s.network,
-      collection: COLLECTIONS[s.art],
+      collection: COLLECTIONS[s.collection ?? s.art],
       attributes: s.attributes,
       basePrice: s.price,
       compareAtPrice: s.compareAt ?? null,

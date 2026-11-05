@@ -17,8 +17,10 @@ test.describe('04 · Favoritos', () => {
       .getByRole('button', { name: /Sage Nomad #009/ })
       .filter({ visible: true })
       .first()
+    const saved = page.waitForResponse((r) => r.request().method() === 'PUT' && r.url().includes('/favorites/sage-nomad-009') && r.ok())
     await toggle.click()
     await expect(toggle).toHaveAttribute('aria-pressed', 'true')
+    await saved
     await page.reload()
     await expect(
       page
